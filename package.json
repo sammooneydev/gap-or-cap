@@ -1,0 +1,26 @@
+{
+  "name": "gaporcap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Noysomee/gaporcap.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Noysomee/gaporcap/issues"
+  },
+  "homepage": "https://github.com/Noysomee/gaporcap#readme",
+  "dependencies": {
+    "discord.js": "^14.21.0",
+    "djs-commander": "^0.0.50",
+    "dotenv": "^17.0.1"
+  }
+}
