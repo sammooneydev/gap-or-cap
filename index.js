@@ -13,6 +13,12 @@ const client = new Client({
     ]
 });
 
+new CommandHandler({
+    client,
+    eventsPath : path.join(__dirname, 'events'),
+    commandsPath : path.join(__dirname, 'commands'),
+})
+
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`)
 });
