@@ -14,5 +14,5 @@ module.exports = {
         "**Example:**\n" +
         `_"${example}"_`
     );
-  },
+  }
 };
