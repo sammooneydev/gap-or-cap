@@ -5,9 +5,9 @@ module.exports = {
   },
   run: ({ interaction }) => {
     const examplesentences = [
-        'Calling THAT a gap is absolutely cap, he just messed up his dp',
-        'Thats cap, you just lamed me out with a top tier',
-        'You said you gapped me but thats cap bro, you were just mashing',
+      "Calling THAT a gap is absolutely cap, he just messed up his dp",
+      "Thats cap, you just lamed me out with a top tier",
+      "You said you gapped me but thats cap bro, you were just mashing",
     ];
     const example =
       examplesentences[Math.floor(Math.random() * examplesentences.length)];
