@@ -3,8 +3,8 @@ const { Client, IntentsBitField } = require("discord.js");
 const { CommandHandler } = require("djs-commander"); 
 const path = require("path"); //defining node path module for use in working with directory paths
 
-// setting up the bot's persmissions within the codebase
-// This bot can access servers and their messages, as well as polls and reactions, and the content of messages
+//setting up the bot's persmissions within the codebase
+//this bot can access servers and their messages, as well as polls and reactions, and the content of messages
 const client = new Client({
   intents: [
     IntentsBitField.Flags.Guilds,
