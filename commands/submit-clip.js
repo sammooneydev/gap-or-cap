@@ -21,9 +21,28 @@ module.exports = {
     }
     await interaction.reply({
       content:
-        "Allllllrighty then chatroom, I have a simple question for you. GAP. OR. CAP.",
+        "Allllllrighty then chatroom, I have a *simple* question for you. GAP. OR. CAP.\n\n*votes will be counted in 30 seconds*",
       files: [clip.url],
     });
-    //TODO: add process for actually polling the server, whether that be with reactions or with an actual poll
+    const message = await interaction.fetchReply();
+
+    await message.react("💀");
+    await message.react("🧢");
+
+    const filter = (reaction, user) =>
+      ["💀", "🧢"].includes(reaction.emoji.name) && !user.bot;
+
+    const collected = await message.awaitReactions({ filter, time: 30000 });
+
+    const gapvotes = collected.get("💀")?.count || 0;
+    const capvotes = collected.get("🧢")?.count || 0;
+
+    if (gapvotes > capvotes) {
+      await interaction.followUp({ files: ["data/gap.gif"] });
+    } else if (gapvotes === capvotes) {
+      await interaction.followUp({ files: ["data/draw.gif"] });
+    } else {
+      await interaction.followUp({ files: ["data/cap.gif"] });
+    }
   },
 };
