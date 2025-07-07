@@ -23,11 +23,15 @@ module.exports = {
       });
     }
     //sends the video with the message defined in 'content'
-    await interaction.reply({
-      content:
-        "Allllllrighty then chatroom, I have a *simple* question for you. GAP. OR. CAP.\n\n*votes will be counted in 30 seconds*",
-      files: [clip.url],
-    });
+    try {
+      await interaction.reply({
+        content:
+          "Allllllrighty then chatroom, I have a *simple* question for you. GAP. OR. CAP.\n\n*votes will be counted in 30 seconds*",
+        files: [clip.url],
+      });
+    } catch (err) {
+      console.error("failed to reply to interaction", err);
+    }
     //fetches the original reply to the command and declares it as 'message'
     const message = await interaction.fetchReply();
 
