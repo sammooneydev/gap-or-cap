@@ -1,7 +1,7 @@
 
 # Gap or Cap - A Discord Bot Made Because of an In-Joke
 
-This is a small-scale project which serves to translate an in-joke from when me and my friends play fighting games, into a simple Discord bot created in JavaScript that allowed me to work with the language in a project that I actually finished.
+This is a small-scale project which serves to translate an in-joke from when me and my friends play games, into a simple Discord bot created in JavaScript that allowed me to work with the language in a project that I actually finished.
 
 I very much enjoyed developing this project and I can even see myself coming back to it in the future, to add other fun features that come to mind!
 
