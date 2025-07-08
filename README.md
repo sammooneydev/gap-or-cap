@@ -24,4 +24,4 @@ Other than that, setting it up for yourself is as simple as getting the Applicat
 
 ## Acknowledgements (I Guess)
 
-At the end here I just wanted to thank, and credit Lewis, Cole, and Roberto for helping with writing the example sentences! (and by that I mean write most of them)
+At the end here I just wanted to thank, and credit Lewis, Cole, and Roberto for helping with writing the example sentences! (and by that I mean coming up with most of them)
