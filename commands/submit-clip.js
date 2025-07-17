@@ -7,8 +7,14 @@ module.exports = {
       {
         name: "clip",
         description: "attach your clip",
-        type: 11,
+        type: 11, //11 = video file
         required: true,
+      },
+      {
+        name: "duration",
+        description: "voting time in seconds (30s by default)",
+        type: 4, //4 = integer
+        required: false,
       },
     ],
   },
@@ -17,6 +23,8 @@ module.exports = {
     try {
       //gets the attached video file from the command
       const clip = interaction.options.getAttachment("clip");
+      //gets the inputted time from the command (if it was entered)
+      const duration = interaction.options.getInteger("duration") || 30;
       //check if the file is a valid video
       if (!clip || !clip.contentType.startsWith("video/")) {
         return interaction.reply({
@@ -28,8 +36,7 @@ module.exports = {
       await interaction.deferReply();
       //edit and send deferred reply
       await interaction.editReply({
-        content:
-          "Allllllrighty then chatroom, I have a *simple* question for you. GAP. OR. CAP.\n\n*votes will be counted in 30 seconds*",
+        content: `Allllllrighty then chatroom, I have a *simple* question for you. GAP. OR. CAP.\n\n*votes will be counted in ${duration} seconds*`,
         files: [clip.url],
       });
       //fetches the original reply to the command and declares it as 'message'
@@ -44,7 +51,10 @@ module.exports = {
         ["💀", "🧢"].includes(reaction.emoji.name) && !user.bot;
 
       //sets a timer for 30 seconds that allows the votes to be counted
-      const collected = await message.awaitReactions({ filter, time: 30000 });
+      const collected = await message.awaitReactions({
+        filter,
+        time: duration * 1000,
+      });
 
       //assign number of votes to 'gapvotes' and 'capvotes' variables once the timer is up
       const gapvotes = collected.get("💀")?.count || 0;
